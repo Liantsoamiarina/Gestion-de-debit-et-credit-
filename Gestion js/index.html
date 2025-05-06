@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <title>Document</title>
+  </head>
+  <body class="bg-light p-4">
+    <div class="container">
+      <h2 class="mb-4 text-center">Test</h2>
+
+      <div class="row g-2 mb-3">
+        <div class="col-md-4">
+          <input
+            type="text"
+            id="description"
+            class="form-control"
+            placeholder="Désignation"
+          />
+        </div>
+        <div class="col-md-3">
+          <input
+            type="number"
+            id="amount"
+            class="form-control"
+            placeholder="Montant"
+          />
+        </div>
+        <div class="col-md-3">
+          <select id="type" class="form-select">
+            <option value="credit">Crédit</option>
+            <option value="debit">Débit</option>
+          </select>
+        </div>
+        <div class="col-md-2 d-grid">
+          <button class="btn btn-primary" onclick="ajouterTransaction()">
+            Ajouter
+          </button>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-end mb-3">
+        <button class="btn btn-outline-danger" onclick="resetTransactions()">
+          Réinitialiser
+        </button>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Crédits</h4>
+          <table class="table table-bordered table-striped">
+            <thead class="table-success">
+              <tr>
+                <th>Désignation</th>
+                <th>Montant</th>
+              </tr>
+            </thead>
+            <tbody id="credit-body"></tbody>
+          </table>
+          <div class="fw-bold" id="total-credit">Total Crédit : 0 Ar</div>
+        </div>
+
+        <div class="col-md-6">
+          <h4>Débits</h4>
+          <table class="table table-bordered table-striped">
+            <thead class="table-danger">
+              <tr>
+                <th>Désignation</th>
+                <th>Montant</th>
+              </tr>
+            </thead>
+            <tbody id="debit-body"></tbody>
+          </table>
+          <div class="fw-bold" id="total-debit">Total Débit : 0 Ar</div>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <h4>Reste</h4>
+        <div class="fw-bold" id="solde">Reste : 0</div>
+      </div>
+
+      <div class="mt-4">
+        <h4>Dernières transactions</h4>
+        <ul class="list-group" id="recent-transactions"></ul>
+      </div>
+    </div>
+  </body>
+  <script src="index.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+</html>
